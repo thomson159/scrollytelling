@@ -63,36 +63,33 @@ const capProps: { position: Vector3; rotation: Euler; progress: number }[] = [
 export const CapsModel = () => {
   const innerRef = React.useRef<THREE.Group>(null);
   const { width } = useThree((state) => state.viewport);
-  const { nodes, materials } = useGLTF("/models/Cap.glb") as GLTFResult;
+  // const { nodes, materials } = useGLTF("/models/donut.glb");
+  const model = useGLTF("/models/donut.glb");
 
-  const clonedMaterials: {
-    "m_Cap-v2": THREE.MeshStandardMaterial;
-    m_Outline: THREE.MeshStandardMaterial;
-  }[] = useMemo(() => {
-    materials["m_Cap-v2"].transparent = true;
-    materials["m_Cap-v2"].opacity = 0;
-    materials["m_Outline"].transparent = true;
-    materials["m_Outline"].opacity = 0;
+  const clonedMaterials = useMemo(() => {
+    // model.userData.materials["m_Cap-v2"].transparent = true;
+    // model.userData.materials["m_Cap-v2"].opacity = 0;
+    // model.userData.materials["m_Outline"].transparent = true;
+    // model.userData.materials["m_Outline"].opacity = 0;
 
     return Array(capProps.length)
       .fill(0)
       .map((_, idx) => {
         const clonedMaterials = {
-          ["m_Cap-v2"]: materials["m_Cap-v2"].clone(),
-          ["m_Outline"]: materials["m_Outline"].clone(),
+          // ["m_Cap-v2"]: model.userData.materials["m_Cap-v2"].clone(),
+          // ["m_Outline"]: model.userData.materials["m_Outline"].clone(),
         };
 
-        clonedMaterials["m_Cap-v2"].userData.idx = idx;
-        clonedMaterials["m_Outline"].userData.idx = idx;
+        // clonedMaterials["m_Cap-v2"].userData.idx = idx;
+        // clonedMaterials["m_Outline"].userData.idx = idx;
 
         return clonedMaterials;
       });
-  }, [materials]);
+  }, []);
 
   const responsiveVPWidth = Math.max(width, 4);
   const halfViewportWidth = responsiveVPWidth / 2;
   const fadeInYoffset = 0.1;
-
 
   const handleUpdate = React.useCallback(
     (idx: number) => {
@@ -111,8 +108,8 @@ export const CapsModel = () => {
         .multiplyScalar(halfViewportWidth);
       const invProgress = 1 - currCapProps.progress;
 
-      currMaterials["m_Cap-v2"].opacity = currCapProps.progress;
-      currMaterials["m_Outline"].opacity = currCapProps.progress;
+      // currMaterials["m_Cap-v2"].userData.opacity = currCapProps.progress;
+      // currMaterials["m_Outline"].userData.opacity = currCapProps.progress;
 
       currObj.rotation.y =
         currCapProps.rotation.y +
@@ -158,6 +155,24 @@ export const CapsModel = () => {
         }}
       />
 
+      {/* <mesh>
+        <hemisphereLight intensity={0.15} groundColor="black" />
+        <spotLight
+          position={[-20, 50, 10]}
+          angle={0.12}
+          penumbra={1}
+          intensity={1}
+          castShadow
+          shadow-mapSize={1024}
+        />
+        <pointLight intensity={0} />
+        <primitive
+          object={model.scene}
+          scale={1}
+          position={[0, -3.25, -1.5]}
+        />
+      </mesh> */}
+
       <group ref={innerRef}>
         {capProps.map(({ position, rotation }, idx) => {
           return (
@@ -167,7 +182,24 @@ export const CapsModel = () => {
               rotation={rotation.clone()}
               key={idx}
             >
-              <Float>
+              <mesh>
+                {/* <hemisphereLight intensity={0.15} groundColor="black" />
+                <spotLight
+                  position={[-20, 50, 10]}
+                  angle={0.12}
+                  penumbra={1}
+                  intensity={1}
+                  castShadow
+                  shadow-mapSize={1024}
+                />
+                <pointLight intensity={0} /> */}
+                <primitive
+                  object={model.scene}
+                  scale={1}
+                // position={[0, -3.25, -1.5]}
+                />
+              </mesh>
+              {/* <Float>
                 <mesh
                   geometry={nodes.Sphere007.geometry}
                   material={clonedMaterials[idx]?.["m_Cap-v2"]}
@@ -176,7 +208,7 @@ export const CapsModel = () => {
                   geometry={nodes.Sphere007_1.geometry}
                   material={clonedMaterials[idx]?.["m_Outline"]}
                 />
-              </Float>
+              </Float> */}
             </group>
           );
         })}

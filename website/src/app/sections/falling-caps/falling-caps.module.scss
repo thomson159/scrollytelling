@@ -2,7 +2,7 @@
 
 .spacer {
   position: relative;
-  height: 700vh;
+  height: 300vh;
 }
 
 .pin {
@@ -34,6 +34,7 @@
     margin: 0 auto;
     text-transform: capitalize;
     line-height: calc(86 / 72);
+    text-align: center;
 
     @media screen and (max-width: 800px) {
       font-size: tovw(17px, "mobile");
@@ -41,6 +42,7 @@
 
     .highlight {
       color: var(--color-orange);
+      // color: var(--color-white);
     }
   }
 }

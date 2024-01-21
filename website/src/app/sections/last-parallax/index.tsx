@@ -4,7 +4,6 @@ import * as Scrollytelling from "~/lib/scrollytelling-client";
 import Image from "next/image";
 import SMILE_IMAGE from "../../../../public/images/parallax/smile.png";
 import PC_IMAGE from "../../../../public/images/parallax/pc.png";
-
 import s from "./last-parallax.module.scss";
 
 export const LastParallax = () => {
@@ -65,8 +64,9 @@ export const LastParallax = () => {
             }}
           >
             <h2 className={s["title"]}>
-              THAT&apos;S ALL, <br />
-              FOLKS
+              software,<br />
+              graphics,<br />
+              media
             </h2>
           </Scrollytelling.Animation>
         </div>

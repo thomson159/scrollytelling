@@ -26,6 +26,11 @@ const MacModel = () => {
   const { nodes, materials } = useGLTF(
     "/models/Mac128k-light.glb"
   ) as GLTFResult;
+
+  // const model = useGLTF(
+  //   "/models/montana.glb"
+  // );
+
   const innerRef = useRef<THREE.Group>(null);
   const width = useThree((state) => state.viewport.width);
 
@@ -39,6 +44,23 @@ const MacModel = () => {
     <Float>
       <group dispose={null} scale={width * 0.6} ref={innerRef}>
         <group position={[0, 0, 0]} rotation={[0.45, -0.51, -0.03]}>
+          {/* <mesh>
+            <hemisphereLight intensity={0.15} groundColor="black" />
+            <spotLight
+              position={[-20, 50, 10]}
+              angle={0.12}
+              penumbra={1}
+              intensity={1}
+              castShadow
+              shadow-mapSize={1024}
+            />
+            <pointLight intensity={0} />
+            <primitive
+              object={model.scene}
+              scale={0.02}
+              position={[0, -3.25, -1.5]}
+            />
+          </mesh> */}
           <mesh
             castShadow
             receiveShadow
@@ -70,7 +92,7 @@ export const CanvasWithMacModel = () => {
         });
         gsap.to(
           canvasRef.current?.closest('[data-mac-canvas-container="true"]') ||
-            null,
+          null,
           { opacity: 1, scale: 1, duration: 0.15 }
         );
       }}

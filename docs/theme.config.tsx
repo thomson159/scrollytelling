@@ -4,13 +4,13 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 import { useConfig } from 'nextra-theme-docs'
 
-export const siteURL = new URL(process.env.NEXT_PUBLIC_SCROLLY_URL)
-export const siteOrigin = siteURL.origin
+// export const siteURL = new URL(process.env.NEXT_PUBLIC_SCROLLY_URL)
+// export const siteOrigin = siteURL.origin
 
 const defaultMeta = {
-  title: 'BSMNT Scrollytelling | Docs',
+  title: 'Scrollytelling | Docs',
   description: "Docs for our animation library, @bsmnt/scrollytelling.",
-  ogImage: `${siteOrigin}/og.jpg`,
+  // ogImage: `${siteOrigin}/og.jpg`,
   twitter: {
     cardType: 'summary_large_image',
     handle: '@basementstudio',
@@ -61,13 +61,13 @@ const config: DocsThemeConfig = {
         name="twitter:description"
         content={defaultMeta.description}
       />
-      <meta name="twitter:image" content={defaultMeta.ogImage} />
+      {/* <meta name="twitter:image" content={defaultMeta.ogImage} /> */}
       <meta property="og:title" content={defaultMeta.title} />
       <meta
         property="og:description"
         content={defaultMeta.description}
       />
-      <meta property="og:image" content={defaultMeta.ogImage} />
+      {/* <meta property="og:image" content={defaultMeta.ogImage} /> */}
       <meta property="og:image:alt" content={defaultMeta.title} />
       <meta
         property="og:image:width"
@@ -100,7 +100,7 @@ const config: DocsThemeConfig = {
     const { asPath } = useRouter()
     if (asPath !== '/') {
       return {
-        titleTemplate: '%s – BSMNT Scrollytelling | Docs',
+        titleTemplate: '%s – Scrollytelling | Docs',
       }
     }
   }

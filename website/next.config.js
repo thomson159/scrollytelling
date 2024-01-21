@@ -7,21 +7,23 @@ const nextConfig = {
   experimental: { appDir: true },
   images: {
     domains: ["lab.basement.studio"],
+    unoptimized: true,
   },
-  rewrites: async () => [
-    {
-      source: "/:path*",
-      destination: `/:path*`,
-    },
-    {
-      source: "/docs",
-      destination: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs`,
-    },
-    {
-      source: "/docs/:path*",
-      destination: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/:path*`,
-    },
-  ],
+  // rewrites: async () => [
+  //   {
+  //     source: "/:path*",
+  //     destination: `/:path*`,
+  //   },
+  //   // {
+  //   //   source: "/docs",
+  //   //   destination: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs`,
+  //   // },
+  //   // {
+  //   //   source: "/docs/:path*",
+  //   //   destination: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/:path*`,
+  //   // },
+  // ],
+  output: "export",
 };
 
 module.exports = (_phase, { defaultConfig: _ }) => {

@@ -109,13 +109,13 @@
 .section {
   position: relative;
   overflow-x: hidden;
-  padding-top: tovw(28px, "desktop-large", 24px);
+  // padding-top: tovw(28px, "desktop-large", 24px);
 }
 
 .model-container {
   position: absolute;
   z-index: 100;
-  top: 50%;
+  top: 35%;
   right: 0;
   width: tovw(500px, "desktop-large", 200px);
   height: tovw(500px, "desktop-large", 200px);
@@ -176,7 +176,7 @@
 
   .svg-performs {
     position: relative;
-    width: tovw(1118px);
+    // width: tovw(2000px);
     height: tovw(115px);
     transform: scaleY(1.016);
     transform-origin: left bottom;
@@ -184,9 +184,9 @@
 
   .svg-that {
     position: relative;
-    width: tovw(415px);
+    width: tovw(800px);
     height: tovw(115px);
-    margin-right: tovw(70px);
+    margin-right: tovw(10px);
     transform-origin: left center;
   }
 }
@@ -194,7 +194,7 @@
 .footer {
   display: grid;
   column-gap: tovw(24px);
-  grid-template-columns: repeat(12, 1fr);
+  // grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
 
   @media screen and (max-width: 800px) {
@@ -211,6 +211,9 @@
     &:nth-child(1) {
       grid-area: 1 / 1 / 2 / 5;
     }
+    // &:nth-child(2) {
+    //   grid-area: 1 / 7 / 2 / 8;
+    // }
     &:nth-child(3) {
       grid-area: 1 / 8 / 2 / 11;
     }

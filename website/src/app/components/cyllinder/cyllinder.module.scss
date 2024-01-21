@@ -49,10 +49,11 @@
         position: absolute;
         font-size: tovw(14px, "desktop", 7px);
         background: var(--color-white);
-        color: #ff4d00;
+        // color: #ffcc00;
+        color: black;
         text-transform: uppercase;
         transform: translateX(-50%);
-        margin-top: tovw(20px, "desktop", 10px);
+        margin-top: tovw(50px, "desktop", 10px);
         padding: tovw(4px) tovw(5px);
         line-height: 1;
         border-radius: tovw(2px);

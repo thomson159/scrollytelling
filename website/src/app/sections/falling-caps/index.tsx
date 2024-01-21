@@ -1,7 +1,6 @@
 "use client";
 
 import * as Scrollytelling from "@bsmnt/scrollytelling";
-
 import s from "./falling-caps.module.scss";
 import { CapsModel } from "./caps";
 import { Canvas } from "@react-three/fiber";
@@ -25,7 +24,7 @@ const splitText = (text: string, wordClass?: string) => {
   return htmlWords;
 };
 
-const lines = ["We want to help", "make the internet", "everything it can be."];
+const lines = ["Twoje Pomysly,", "Nasza Technologia,", "Jedno Perfekcyjne Rozwiazanie"];
 
 export const FallingCaps = () => {
   const splittedText = useMemo(
@@ -57,16 +56,15 @@ export const FallingCaps = () => {
                 powerPreference: "high-performance",
               }}
             >
-              <CapsModel />
+              {/* <CapsModel /> */}
             </Canvas>
           </div>
-
           <p className={s["paragraph"]}>
             <Scrollytelling.Stagger
               overlap={0}
               tween={{
                 start: 0,
-                end: 50,
+                end: 99,
                 fromTo: [
                   {
                     opacity: 0.2,

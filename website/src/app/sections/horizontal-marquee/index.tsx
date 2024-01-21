@@ -3,7 +3,7 @@ import s from "./horizontal-marquee.module.scss";
 import { forwardRef } from "react";
 
 // const phrase = "OUR WOR IS SERIOUS WE ARE NOT";
-const phrase = "FROM THE LABORATORY...";
+const phrase = "crafty";
 const splitted = phrase.split("");
 const charsLength = splitted.length;
 
@@ -74,7 +74,7 @@ export const HorizontalMarquee = () => {
                   })}
                 </p>
               </Scrollytelling.Animation>
-              <Scrollytelling.Animation
+              {/* <Scrollytelling.Animation
                 tween={{
                   start: 90,
                   end: 100,
@@ -85,7 +85,7 @@ export const HorizontalMarquee = () => {
                 }}
               >
                 <WorldSvg />
-              </Scrollytelling.Animation>
+              </Scrollytelling.Animation> */}
             </div>
           </Scrollytelling.Animation>
         </div>

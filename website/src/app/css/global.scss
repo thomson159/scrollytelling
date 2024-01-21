@@ -9,7 +9,7 @@
   // colors
   --color-black: #000;
   --color-white: #efefef;
-  --color-orange: #ff4d00;
+  --color-orange: #ffcc00;
 
   // easings
   --custom-ease-out: cubic-bezier(0, 1, 0.5, 1.02);
@@ -102,5 +102,5 @@ body:not(.user-is-tabbing) textarea:focus {
 
 ::selection {
   color: #000;
-  background-color: #ff4d00;
+  background-color: #ffcc00;
 }

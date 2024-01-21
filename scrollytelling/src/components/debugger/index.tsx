@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Visualizer } from "./visualizer";
+// import { Visualizer } from "./visualizer";
 import { Portal } from "@radix-ui/react-portal";
 
 // ---- Debugger
@@ -22,7 +22,7 @@ export default function Debugger() {
   if (!mountInstance) return <></>;
   return (
     <Portal>
-      <Visualizer />
+      {/* <Visualizer /> */}
     </Portal>
   );
 }

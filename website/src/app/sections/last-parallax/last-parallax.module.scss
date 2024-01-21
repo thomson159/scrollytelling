@@ -48,7 +48,11 @@
 
   .smile {
     width: tovw(308px);
-    height: tovw(300px);
+    // width: tovw(308px);
+    // height: tovw(300px);
+    // -webkit-transform: scaleX(-1);
+    // transform: scaleX(-1);
+
     z-index: 10;
     top: 70%;
     left: 30%;

@@ -2,7 +2,7 @@ import "./css/global.scss";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
-import { siteOrigin } from "~/lib/constants";
+// import { siteOrigin } from "~/lib/constants";
 import { Analytics } from "@vercel/analytics/react";
 
 const jetBrainsMono = JetBrains_Mono({
@@ -25,35 +25,35 @@ const basementGrotesque = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "BSMNT @ Scrollytelling",
-  description:
-    "A demo website made exclusively to showcase a couple of cool animations powered by our new library, @bsmnt/scrollytelling.",
+  title: "webcrafty.pl",
+  // description:
+  //   "A demo website made exclusively to showcase a couple of cool animations powered by our new library, @/scrollytelling.",
   viewport: {
     height: "device-height",
     initialScale: 1,
     width: "device-width",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/favicon.ico", // powinno byc svg
+    shortcut: "/favicon.ico", // powinno byc svg
   },
   manifest: "/manifest.webmanifest",
   twitter: {
     card: "summary_large_image",
     creator: "@basementstudio",
-    description: "BSMNT @ Scrollytelling",
-    images: [{ width: 1200, height: 630, url: `${siteOrigin}/og.jpg` }],
+    description: " @ Scrollytelling",
+    // images: [{ width: 1200, height: 630, url: `${siteOrigin}/og.jpg` }],
     site: "@basementstudio",
-    title: "BSMNT @ Scrollytelling",
+    title: " @ Scrollytelling",
   },
   openGraph: {
-    description: "BSMNT @ Scrollytelling",
-    images: [{ width: 1200, height: 630, url: `${siteOrigin}/og.jpg` }],
+    description: " @ Scrollytelling",
+    // images: [{ width: 1200, height: 630, url: `${siteOrigin}/og.jpg` }],
     locale: "en-US",
-    siteName: "BSMNT @ Scrollytelling",
-    title: "BSMNT @ Scrollytelling",
+    siteName: " @ Scrollytelling",
+    title: " @ Scrollytelling",
     type: "website",
-    url: siteOrigin,
+    // url: siteOrigin,
   },
 };
 

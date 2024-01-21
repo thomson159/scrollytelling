@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "build:analyze": "cross-env ANALYZE=true yarn build",
     "start": "next start",
     "lint": "next lint"

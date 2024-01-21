@@ -38,11 +38,11 @@
       }
 
       position: relative;
-      min-width: tovw(620px, "desktop-large", 320px);
-      min-height: tovw(620px, "desktop-large", 320px);
+      min-width: tovw(420px, "desktop-large", 320px);
+      min-height: tovw(420px, "desktop-large", 320px);
 
       .QR {
-        height: tovw(620px, "desktop-large", 320px);
+        height: tovw(420px, "desktop-large", 320px);
         width: auto;
       }
     }
@@ -92,6 +92,20 @@
         display: flex;
       }
     }
+  }
+}
+
+.model-container {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  right: 0;
+  width: tovw(500px, "desktop-large", 200px);
+  height: tovw(500px, "desktop-large", 200px);
+  transform: translateY(-50%);
+
+  @media screen and (max-width: 800px) {
+    top: 15%;
   }
 }
 
