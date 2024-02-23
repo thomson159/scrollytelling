@@ -1,9 +1,9 @@
 "use client";
 
-// import Image from "next/image";
-// import bsmtTeamImg from "../../../../public/footer/basement-team-footer.jpg";
+import Image from "next/image";
+import bsmtTeamImg from "../../../../public/footer/image17061355050.jpg";
 import * as Scrollytelling from "~/lib/scrollytelling-client";
-// import QRImg from "../../../../public/footer/QR.svg";
+import QRImg from "../../../../public/footer/QR.svg";
 import confetti from "canvas-confetti";
 import s from "./footer.module.scss";
 import Link from "next/link";
@@ -11,11 +11,12 @@ import Link from "next/link";
 // import basementTeamSVG from "../../../../public/footer/basement-team.svg";
 import { useMedia } from "../../../hooks/use-media";
 import { toVw } from "../../../lib/utils";
-import { useCallback, useEffect, useRef, useState } from "react";
+// import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef } from "react";
 // import clsx from "clsx";
 // import { CanvasWithMacModel2 } from "./mac-model2";
 
-const ghHref = "https://github.com/basementstudio/scrollytelling";
+// const ghHref = "https://github.com/basementstudio/scrollytelling";
 
 export const Footer = () => {
   const isDesktopSm = useMedia("(min-width: 1024px)");
@@ -25,11 +26,11 @@ export const Footer = () => {
       <footer className={s.footer}>
         <PreFooter />
         <div className={s["imgs-container"]}>
-          {/* <Image
+          <Image
             className={s["team-img"]}
             src={bsmtTeamImg}
-            alt="Basement Team"
-          /> */}
+            alt="Team"
+          />
           <div className={s["QR-container"]}>
             <Scrollytelling.Animation
               tween={{
@@ -43,16 +44,27 @@ export const Footer = () => {
                 },
               }}
             >
-              <a href={ghHref} target="_blank" rel="noreferrer">
-                {/* <Image className={s.QR} src={QRImg} alt="QR" /> */}
+              <a href="mailto:kontakt@webcrafty.pl"
+                target="_blank"
+                rel="noreferrer">
+                <Image className={s.QR} src={QRImg} alt="QR" />
               </a>
             </Scrollytelling.Animation>
           </div>
         </div>
+        <svg
+          className={s["svg-performs"]}
+          fill="none"
+          viewBox="0 0 1200 60"
+        >
+          <text style={{ fill: 'white', fontSize: 60, whiteSpace: 'pre' }}>
+            <tspan x="0" y="50">WEBCRAFTY</tspan>
+          </text>
+        </svg>
         {/* <Image
           className={s["footer-heading-text"]}
           src={basementTeamSVG}
-          alt="basement team"
+          alt="team"
         /> */}
         <div className={s.links}>
           {/* <div>
@@ -74,7 +86,7 @@ export const Footer = () => {
             </ul>
           </div> */}
           <div>
-            <span>SKONTAKTUJ SIĘ</span>
+            <span>SKONTAKTUJ SIĘ Z NAMI!</span>
             <Link
               className="link"
               href="mailto:kontakt@webcrafty.pl"
@@ -85,8 +97,8 @@ export const Footer = () => {
             </Link>
           </div>
           <div>
-            <span>{new Date().getFullYear()}</span>
-            <span>WSZELKIE PRAWA ZASTRZEŻONE</span>
+            <span>© {new Date().getFullYear()} WEBCRAFTY.PL</span>
+            {/* <span>WSZELKIE PRAWA ZASTRZEŻONE</span> */}
           </div>
         </div>
       </footer>
@@ -147,14 +159,14 @@ const PreFooter = () => {
         >
           Check it out on GitHub
         </a> */}
-        <a
+        {/* <a
           className={s["mobile-qr-link"]}
           href={ghHref}
           target="_blank"
           rel="noreferrer"
         >
-          {/* <Image className={s["QR-mobile"]} src={QRImg} alt="QR" /> */}
-        </a>
+          <Image className={s["QR-mobile"]} src={QRImg} alt="QR" />
+        </a> */}
       </div>
       {/* <div className={s["model-container"]} style={{ marginTop: 200, marginRight: 60 }}>
         <CanvasWithMacModel2 />
